@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#131810">
+<meta name="description" content="청운시 네 생활권에서 투자하고 거래하는 수업용 부동산 전략 게임">
+<title>청운시 부동산 거래소</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="game.mjs"></script>
+</head>
+<body>
+<header class="mast">
+  <a href="./" class="brand"><span class="seal" aria-hidden="true"><span></span><span></span><span></span></span><span><strong>청운시 부동산 거래소</strong><small>CHEONGUN PROPERTY EXCHANGE</small></span></a>
+  <div class="quotes"><div><span>한국은행 기준금리</span><strong>3.00<span>%</span></strong><small>2026.10.22 결정</small></div><div><span>USD / KRW</span><strong id="fx">1,332.33</strong><small id="fx-date">11.18 공표값</small></div></div>
+  <button class="outline new" data-act="new"><span aria-hidden="true">↻</span> 새 게임</button>
+</header>
+<main>
+  <section class="summary" aria-label="투자 현황">
+    <div class="metric"><span><i>▦</i> 현재 분기</span><strong id="quarter">1년차 <em>1분기</em></strong><small id="length">총 20분기 · 표준 모드</small></div>
+    <div class="metric"><span><i>▣</i> 보유 현금</span><strong id="cash">5억 원</strong><small>즉시 사용 가능</small></div>
+    <div class="metric"><span><i>◈</i> 예상 순자산</span><strong id="wealth">5억 원</strong><small id="return">시작 자본 대비 +0.0%</small></div>
+    <div class="metric time"><span><i>◷</i> 남은 턴 시간</span><strong id="clock">00:48</strong><small id="clock-detail">게임 시작 후 진행</small></div>
+  </section>
+  <div class="workspace">
+    <section class="city-card" aria-labelledby="city-title">
+      <div class="map-header"><div><h1 id="city-title">청운시 지도</h1><p>생활권을 선택해 매물과 사람들을 만날 수 있습니다.</p></div><div class="map-tools"><button class="icon-btn" data-act="zoom-out" title="축소" aria-label="지도 축소">−</button><button class="icon-btn" data-act="zoom-in" title="확대" aria-label="지도 확대">+</button></div></div>
+      <div class="map"><div class="map-content" id="map-content"><img src="city.webp" alt="철도, 항만, 업무지구와 주거지를 가르는 강이 있는 청운시 조감도"><div id="markers"></div></div><span class="map-chip">◈ 4개 생활권</span><span class="compass" aria-hidden="true">↑<small>N</small></span></div>
+      <div class="ticker"><b>청운시보</b><span id="headline"></span><button data-tab="news" aria-label="청운시보 열기">소식 보기 <span aria-hidden="true">›</span></button></div>
+      <nav class="nav" aria-label="게임 메뉴">
+        <button data-tab="market"><i>▤</i>매물 거래</button><button data-tab="portfolio"><i>▧</i>내 자산</button><button data-tab="bank"><i>▥</i>청운은행</button><button data-tab="pf"><i>◇</i>개발 사업</button><button data-tab="news"><i>▱</i>도시 소식</button>
+      </nav>
+    </section>
+    <aside class="side" aria-label="거래 정보">
+      <div id="panel-head"></div><div id="panel" class="panel"></div>
+      <div class="turn-actions"><button class="gold" id="next" data-act="next">게임 시작 <span aria-hidden="true">▶</span></button><span id="turn-hint">20분기 · 표준 모드</span></div>
+    </aside>
+  </div>
+  <footer><span>청운시 부동산 거래소</span><button data-act="about">게임 안내 · 데이터 출처</button></footer>
+</main>
+<dialog id="dialog"><div id="dialog-body"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
